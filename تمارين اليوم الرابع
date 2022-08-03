@@ -1,0 +1,175 @@
+//Ex1
+try {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7,};
+    System.out.println(arr[9]);
+} catch (ArithmeticException | ArrayIndexOutOfBoundsException | NullPointerException e) {
+    System.out.println(e.getMessage());
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Ex2
+    public static void pickNumber(int number1) {
+
+    if (number1%5!= 0)
+        throw new ArithmeticException("The number is not divided by 5");
+    else System.out.println("the number is divided by 5");
+    }
+public static void main(String[] args) {
+    try {
+        pickNumber(10);
+    }
+    catch (Exception e)
+    {
+        System.out.println(e.getMessage());
+    }}}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//Ex3
+public class Author {
+    String name;
+    String email;
+
+    public Author (String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+    public String getName(String name) {
+        return name;
+    }
+
+    public String getEmail(String Email) {
+        return Email;
+    }
+
+    public void SetEmail(String Email) {
+        this.email = Email;
+    }
+
+    @Override
+    public String toString() {
+        return "Author[" + "name='" + name + '\'' + ", email='" + email + '\'' + ']';
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Ex4
+
+
+public class Ball {
+    float x;
+    float y;
+    int raduis;
+    float xDelta;
+    float yDelta;
+
+    public Ball(float x, float y, int radius, float xDelta, float yDelta)
+    {
+        this.x = x;
+        this.y = y;
+        this.radius= radius;
+        this.xDelta= xDelta;
+        this.yDelta= yDelta;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public int getRaduis() {
+        return raduis;
+    }
+
+    public void setRaduis(int raduis) {
+        this.raduis = raduis;
+    }
+
+    public float getxDelta() {
+        return xDelta;
+    }
+
+    public void setxDelta(float xDelta) {
+        this.xDelta = xDelta;
+    }
+
+    public float getyDelta() {
+        return yDelta;
+    }
+
+    public void setyDelta(float yDelta) {
+        this.yDelta = yDelta;
+    }
+    public void reflectHorizontal() {
+        xDelta = -xDelta;
+    }
+
+    public void reflectVertical() {
+        yDelta = -yDelta;
+    }
+
+    @Override
+    public String toString() {
+        return "Ball{" + "x=" + x + ", y=" + y + ", radius=" + radius + ", xDelta=" + xDelta + ", yDelta=" + yDelta + '}';
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Ex5
+
+public class Employee {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int salary;
+
+    public Employee(int id, String firstName, String lastName, int salary) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.salary = salary;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+    public String getName() {
+        return firstName+" "+ lastName;
+    }
+    public int getSalary() {
+        return salary;
+    }
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getAnnualSalary() {
+        return salary*12;
+    }
+
+    public int raiseSalary(double percent) {
+        salary= (int) (salary+(salary*percent/100));
+        return salary;
+    }
+    @Override
+    public String toString() {
+        return "Employee{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", salary=" + salary + '}';
+    }
+}
+
+
